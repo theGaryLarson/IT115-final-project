@@ -1,4 +1,4 @@
-#IT115-final-project
+# IT115-final-project
 
 This is the readme file for IT115 final project:
   This repositories sole existence is to demonstrate the skills I've picked up throughout the IT115 course at North Seattle College.
