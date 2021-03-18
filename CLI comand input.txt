@@ -1,0 +1,96 @@
+garyl@DELL-G3 MINGW64 /c/repos/IT115-final-project (main)
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+
+garyl@DELL-G3 MINGW64 /c/repos/IT115-final-project (main)
+$ git checkout -b Changes
+Switched to a new branch 'Changes'
+
+garyl@DELL-G3 MINGW64 /c/repos/IT115-final-project (Changes)
+$ git branch
+* Changes
+  main
+
+garyl@DELL-G3 MINGW64 /c/repos/IT115-final-project (Changes)
+$ pwd
+/c/repos/IT115-final-project
+
+garyl@DELL-G3 MINGW64 /c/repos/IT115-final-project (Changes)
+$ ls
+README.md  demo.js  demostyle.css  test.html
+
+garyl@DELL-G3 MINGW64 /c/repos/IT115-final-project (Changes)
+$ echo "This is some changes" >> local1.html
+
+garyl@DELL-G3 MINGW64 /c/repos/IT115-final-project (Changes)
+$ echo "This is some garbage" >> garbage.html
+
+garyl@DELL-G3 MINGW64 /c/repos/IT115-final-project (Changes)
+$ git status
+On branch Changes
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        garbage.html
+        local1.html
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+garyl@DELL-G3 MINGW64 /c/repos/IT115-final-project (Changes)
+$ git add .
+warning: LF will be replaced by CRLF in garbage.html.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in local1.html.
+The file will have its original line endings in your working directory
+
+garyl@DELL-G3 MINGW64 /c/repos/IT115-final-project (Changes)
+$ git commit -m "files added"
+[Changes 780e486] files added
+ 2 files changed, 2 insertions(+)
+ create mode 100644 garbage.html
+ create mode 100644 local1.html
+
+garyl@DELL-G3 MINGW64 /c/repos/IT115-final-project (Changes)
+$ git restore garbage.html
+
+$ git revert Changes
+Removing local1.html
+Removing garbage.html
+[Changes eb445b1] "Files unstaged"Revert "files added"
+ 2 files changed, 2 deletions(-)
+ delete mode 100644 garbage.html
+ delete mode 100644 local1.html
+
+garyl@DELL-G3 MINGW64 /c/repos/IT115-final-project (Changes)
+$ git status
+On branch Changes
+nothing to commit, working tree clean
+
+garyl@DELL-G3 MINGW64 /c/repos/IT115-final-project (Changes)
+$ echo "This is some changes" >> local1.html
+
+garyl@DELL-G3 MINGW64 /c/repos/IT115-final-project (Changes)
+$ echo "This is some garbage" >> garbage.html
+
+garyl@DELL-G3 MINGW64 /c/repos/IT115-final-project (Changes)
+$ git branch
+* Changes
+  main
+garyl@DELL-G3 MINGW64 /c/repos/IT115-final-project (Changes)
+$ git branch
+* Changes
+  main
+
+garyl@DELL-G3 MINGW64 /c/repos/IT115-final-project (Changes)
+$ git switch main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+garyl@DELL-G3 MINGW64 /c/repos/IT115-final-project (main)
+$ git merge Changes
+Updating 10bfe30..4c41c30
+Fast-forward
+ local1.html | 1 +
+ 1 file changed, 1 insertion(+)
+ create mode 100644 local1.html
